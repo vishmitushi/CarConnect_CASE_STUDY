@@ -1,4 +1,4 @@
-from CarConnect.dao.CustomerService import custom_hash_password
+from dao.CustomerService import custom_hash_password
 from entity.IAdminService import IAdminService
 from exception.AdminNotFoundException import AdminNotFoundException
 from exception.AuthenticationException import AuthenticationException
