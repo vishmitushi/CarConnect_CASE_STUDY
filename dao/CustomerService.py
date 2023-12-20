@@ -2,6 +2,17 @@ from entity.ICustomerService import ICustomerService
 from exception.AuthenticationException import AuthenticationException
 from exception.CustomException import CustomException, StringCheck, validate_email, validate_phone
 from util.DBConnUtil import dbConnection
+import hashlib
+
+
+def custom_hash_password(password1):
+    salt = "$2a$10$[}0w3rima-=-723%.;/'!87&*||]\]"
+    password = password1
+    combined_string = password + salt
+    sha256 = hashlib.sha256()
+    sha256.update(combined_string.encode('utf-8'))
+    hashed_password = sha256.hexdigest()
+    return hashed_password
 
 
 class CustomerService(dbConnection ,ICustomerService):
