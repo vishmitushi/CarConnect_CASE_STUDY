@@ -2,6 +2,17 @@ from dao.AdminService import AdminService
 from dao.CustomerService import CustomerService
 from dao.ReservationService import ReservationService
 from dao.VehicleService import VehicleService
+import hashlib
+
+
+def custom_hash_password(password1):
+    salt = "$2a$10$[}0w3rima-=-723%.;/'!87&*||]\]"
+    password = password1
+    combined_string = password + salt
+    sha256 = hashlib.sha256()
+    sha256.update(combined_string.encode('utf-8'))
+    hashed_password = sha256.hexdigest()
+    return hashed_password
 
 
 
@@ -13,6 +24,13 @@ try:
         vehicleservice1 = VehicleService()
         reservationservice1 = ReservationService()
         adminservice1 = AdminService()
+        
+        while table_creation:
+            customerservice1.create_class()
+            vehicleservice1.create_class()
+            reservationservice1.create_table()
+            adminservice1.create_class()
+            table_creation= False
 
         print("Enter your choice: ")
         print("1.Customer management ")
@@ -123,22 +141,5 @@ except Exception as e:
 
 
 
-# import hashlib
 
 
-# def custom_hash_password(password1):
-#     salt = "$2a$10$[}0w3rima-=-723%.;/'!87&*||]\]"
-#     password = password1
-#     combined_string = password + salt
-#     sha256 = hashlib.sha256()
-#     sha256.update(combined_string.encode('utf-8'))
-#     hashed_password = sha256.hexdigest()
-#     return hashed_password
-
-
-# while table_creation:
-#     customerservice1.create_class()
-#     vehicleservice1.create_class()
-#     reservationservice1.create_table()
-#     adminservice1.create_class()
-#     table_creation= False
