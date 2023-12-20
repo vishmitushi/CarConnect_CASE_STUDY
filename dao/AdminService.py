@@ -1,4 +1,4 @@
-# from CarConnect.dao.CustomerService import custom_hash_password
+from CarConnect.dao.CustomerService import custom_hash_password
 from entity.IAdminService import IAdminService
 from exception.AdminNotFoundException import AdminNotFoundException
 from exception.AuthenticationException import AuthenticationException
@@ -63,7 +63,7 @@ class AdminService(IAdminService,dbConnection):
             self.username = username
 
             password = input("Enter Password: ")
-            # self.password = custom_hash_password(password)
+            self.password = custom_hash_password(password)
 
             role = input("Enter Role (super admin/fleet manager): ").lower()
             if role not in ['super admin', 'fleet manager']:
