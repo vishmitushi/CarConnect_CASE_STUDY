@@ -39,24 +39,4 @@ if __name__ == '__main__':
 
 
 
- # Test adding a new vehicle.
-    # def test3(self):
-    #     print("add vehicle details")
-    #     result = self.vehicleservice1.AddVehicle()
-    #     self.assertEqual('Vehicle added successfully', result)
-    # # Test updating vehicle details.
-    # def test4(self):
-    #     print(" enter vehicle details to update. Select customerID = 4")
-    #     result = self.vehicleservice1.UpdateVehicle()
-    #     self.assertEqual(True, result)
-    # # Test getting a list of available vehicles.
-    # def test5(self):
-    #     print("getting list of available vehicles")
-    #     result = self.vehicleservice1.CountofVehicles()
-    #     self.assertEqual(result[0][0],len( self.vehicleservice1.GetAvailableVehicles()))
-    # # Test getting a list of all vehicles.
-    # def test6(self):
-    #     print("checking whether table is created or not")
-    #     result = self.reservationservice1.create_table()
-    #     self.assertEqual(result, True )
-
+ 
