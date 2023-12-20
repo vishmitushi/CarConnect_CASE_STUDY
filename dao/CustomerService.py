@@ -241,16 +241,16 @@ class CustomerService(dbConnection ,ICustomerService):
             self.stmt.execute(query, (customer_id,))
             stored_password = self.stmt.fetchone()
 
-            # if stored_password:
-            #     stored_password = stored_password[0]
-            #     hashed_input_password = custom_hash_password(password)
-            #     if stored_password == hashed_input_password:
-            #         print("Authentication successful. Welcome!")
-            #     else:
-            #         raise AuthenticationException()
-            #
-            # else:
-            #     raise CustomException("Customer with ID does not exists")
+            if stored_password:
+                stored_password = stored_password[0]
+                hashed_input_password = custom_hash_password(password)
+                if stored_password == hashed_input_password:
+                    print("Authentication successful. Welcome!")
+                else:
+                    raise AuthenticationException()
+            
+            else:
+                raise CustomException("Customer with ID does not exists")
 
             self.close()
         except CustomException as e:
